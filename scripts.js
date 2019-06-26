@@ -18,7 +18,7 @@ function Auto (marca, precio){
 var autos = [];
 
 function agregarAuto (marca,precio){
-	if(!marca == "undefined" ||  marca==null && precio=="undefined" || precio==null){
+	if(marca == undefined ||  marca==null && precio==undefined || precio==null){
 		alert("Complete ambos parametros")
 	}else{
 		var auto = new Auto(marca,precio);
