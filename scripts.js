@@ -1,5 +1,5 @@
 let formulario = document.getElementById("form-carga");
-	
+
 function limpiarFormulario() {
     // Completar
 }
@@ -24,4 +24,23 @@ function agregarAuto (marca,precio){
 		var auto = new Auto(marca,precio);
 		autos.push(auto);
 	}
+}
+
+function actualizarListaAutos() {
+
+	let carList = document.getElementById('car-list')
+	let datos = []
+
+	autos.forEach(function (auto) {
+		datos.push(`<div class="car">
+				<h3>${auto.marca}</h3>
+				<p class="price">
+						<strong>Precio:</strong>
+						<span>$${auto.precio}</span>
+				</p>
+		</div>`)
+	})
+
+	carList.innerHTML = datos.join("")
+
 }
