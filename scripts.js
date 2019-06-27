@@ -2,42 +2,6 @@ var autos = [];
 
 let formulario = document.getElementById("form-carga");
 
-// array de autos
-var autos = 
-[{
-    "marca": "Ford",
-    "precio": 3000
-},
-{
-    "marca": "Chevrolet",
-    "precio": 1000
-},
-{
-    "marca": "Open",
-    "precio": 6000
-},
-{
-    "marca": "Mercedes",
-    "precio": 1000
-},
-{
-    "marca": "Ferrari",
-    "precio": 8000
-},
-{
-    "marca": "Ford",
-    "precio": 7000
-},
-{
-    "marca": "Ford",
-    "precio": 9000
-},
-{
-    "marca": "Ford",
-    "precio": 500
-}];
-
-
 var estadisticas = [
     {
         titulo: 'Total de autos',
@@ -84,10 +48,6 @@ var estadisticas = [
     }
 ];
 
-// console.log(estadisticas[0].valor())
-// console.log(estadisticas[1].valor())
-// console.log(estadisticas[2].valor())
-// console.log(estadisticas[3].valor())
 
 function limpiarFormulario() {
     // Completar
@@ -116,5 +76,6 @@ function agregarAuto (marca,precio){
 	}else{
 		var auto = new Auto(marca,precio);
 		autos.push(auto);
+
 	}
 }
