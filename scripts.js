@@ -10,8 +10,8 @@ function limpiarFormulario() {
 function enviarFormulario(e) {
     e.preventDefault();
     //Variables
-    var marca = formulario.precio.value;
-    var precio = formulario.marca.value;
+    var marca = formulario.marca.value;
+    var precio = formulario.precio.value;
     agregarAuto(marca, precio);
     actualizarListaDeAutos();
     actualizarEstadisticas();
