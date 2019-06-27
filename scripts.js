@@ -3,7 +3,8 @@ var autos = [];
 let formulario = document.getElementById("form-carga");
 
 function limpiarFormulario() {
-    // Completar
+    formulario.precio.value = '';
+    formulario.marca.value = '';
 }
 
 function enviarFormulario(e){
