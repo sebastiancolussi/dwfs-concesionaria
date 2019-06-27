@@ -24,6 +24,22 @@ function Auto (marca, precio){
 	this.precio = precio;
 }
 
+function actualizarEstadisticas () {
+//array llamado x, mostrar el html que muestre est. con datos de autos. 
+	let tabla = document.getElementById('estadisticas')
+	let datos = [];
+
+	estadisticas.forEach(function (obj) {
+		datos.push(`<tr>
+			<td>${obj.titulo}</td>
+			<td>${obj.valor()}</td>
+		</tr>`)
+	})
+
+	tabla.innerHTML = datos.join("")
+
+}
+
 function agregarAuto (marca,precio){
 	if(marca == undefined ||  marca==null && precio==undefined || precio==null){
 		alert("Complete ambos parametros")
