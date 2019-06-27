@@ -1,3 +1,5 @@
+var autos = [];
+
 let formulario = document.getElementById("form-carga");
 
 // array de autos
@@ -86,23 +88,27 @@ var estadisticas = [
 // console.log(estadisticas[1].valor())
 // console.log(estadisticas[2].valor())
 // console.log(estadisticas[3].valor())
-	
+
 function limpiarFormulario() {
     // Completar
 }
 
-function showResults(e) {
+function enviarFormulario(e){
     e.preventDefault();
-	alert("Completame!");
+    //Variables 
+    var marca = document.getElementById("marca").value;
+    var precio = document.getElementById("precio").value;
+    agregarAuto(marca, precio);
+    actualizarListaDeAutos();
+    actualizarEstadisticas();
 }
 
-formulario.addEventListener('submit', showResults);
+formulario.addEventListener('submit', enviarFormulario)
 
 function Auto (marca, precio){
-	this.marca=marca;
-	this.precio=precio;
+	this.marca = marca;
+	this.precio = precio;
 }
-var autos = [];
 
 function agregarAuto (marca,precio){
 	if(marca == undefined ||  marca==null && precio==undefined || precio==null){
