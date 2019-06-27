@@ -2,6 +2,53 @@ var autos = [];
 
 let formulario = document.getElementById("form-carga");
 
+var estadisticas = [
+    {
+        titulo: 'Total de autos',
+        valor () {
+            return autos.length
+        }
+    },
+    {
+        titulo: 'Precio total en autos',
+        valor () {
+            var valorTemporal = 0;
+            autos.forEach(auto => {
+				valorTemporal += auto.precio
+			});
+
+			return valorTemporal;
+        }
+    },
+    {
+        titulo: 'Auto más caro',
+        valor () {
+            var max = 0;
+            
+            autos.forEach(auto => {
+                if (auto.precio > max) {
+                    max = auto.precio
+				}
+			});
+			return max
+        }
+    },
+    {
+        titulo: 'Auto más economico',
+        valor () {
+            
+            var min = autos[0].precio;
+            autos.forEach(auto => {
+                if (auto.precio < min) {
+                    min = auto.precio 
+                }
+			});
+			return min
+        }
+    }
+];
+
+
 function limpiarFormulario() {
     formulario.precio.value = '';
     formulario.marca.value = '';
@@ -47,6 +94,7 @@ function agregarAuto (marca, precio) {
 	} else {
 		var auto = new Auto(marca,precio);
 		autos.push(auto);
+
 	}
 }
 
