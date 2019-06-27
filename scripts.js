@@ -1,6 +1,6 @@
+var autos = [];
+
 let formulario = document.getElementById("form-carga");
-
-
 
 function limpiarFormulario() {
     // Completar
@@ -17,3 +17,17 @@ function enviarFormulario(e){
 }
 
 formulario.addEventListener('submit', enviarFormulario)
+
+function Auto (marca, precio){
+	this.marca = marca;
+	this.precio = precio;
+}
+
+function agregarAuto (marca,precio){
+	if(marca == undefined ||  marca==null && precio==undefined || precio==null){
+		alert("Complete ambos parametros")
+	}else{
+		var auto = new Auto(marca,precio);
+		autos.push(auto);
+	}
+}
