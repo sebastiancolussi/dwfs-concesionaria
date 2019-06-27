@@ -3,12 +3,13 @@ var autos = [];
 let formulario = document.getElementById("form-carga");
 
 function limpiarFormulario() {
-    // Completar
+    formulario.precio.value = '';
+    formulario.marca.value = '';
 }
 
 function enviarFormulario(e){
     e.preventDefault();
-    //Variables 
+    //Variables
     var marca = document.getElementById("marca").value;
     var precio = document.getElementById("precio").value;
     agregarAuto(marca, precio);
@@ -48,3 +49,24 @@ function agregarAuto (marca,precio){
 	}
 }
 
+<<<<<<< HEAD
+=======
+function actualizarListaAutos() {
+
+	let carList = document.getElementById('car-list')
+	let datos = []
+
+	autos.forEach(function (auto) {
+		datos.push(`<div class="car">
+				<h3>${auto.marca}</h3>
+				<p class="price">
+						<strong>Precio:</strong>
+						<span>$${auto.precio}</span>
+				</p>
+		</div>`)
+	})
+
+	carList.innerHTML = datos.join("")
+
+}
+>>>>>>> 4e9de320fbc9697e195f9abc9730a9950da82156
