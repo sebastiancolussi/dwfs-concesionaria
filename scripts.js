@@ -14,8 +14,10 @@ var estadisticas = [
         valor () {
             var valorTemporal = 0;
             autos.forEach(auto => {
-                valorTemporal += auto.precio
-            });
+				valorTemporal += auto.precio
+			});
+
+			return valorTemporal;
         }
     },
     {
@@ -24,26 +26,24 @@ var estadisticas = [
             var max = 0;
             
             autos.forEach(auto => {
-                console.log(auto)
                 if (auto.precio > max) {
                     max = auto.precio
-                }
-            });
-            console.log(max)
+				}
+			});
+			return max
         }
     },
     {
-        titulo: 'Auto más caro',
+        titulo: 'Auto más economico',
         valor () {
             
             var min = autos[0].precio;
             autos.forEach(auto => {
-            
                 if (auto.precio < min) {
-                    return min = auto.precio 
+                    min = auto.precio 
                 }
-            });
-            console.log('minimo ' + min)
+			});
+			return min
         }
     }
 ];
