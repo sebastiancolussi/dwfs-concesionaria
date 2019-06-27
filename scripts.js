@@ -14,7 +14,7 @@ var estadisticas = [
         valor () {
             var valorTemporal = 0;
             autos.forEach(auto => {
-				valorTemporal += auto.precio
+				valorTemporal += parseInt(auto.precio)
 			});
 
 			return valorTemporal;
@@ -24,7 +24,7 @@ var estadisticas = [
         titulo: 'Auto más caro',
         valor () {
             var max = 0;
-            
+
             autos.forEach(auto => {
                 if (auto.precio > max) {
                     max = auto.precio
@@ -36,11 +36,11 @@ var estadisticas = [
     {
         titulo: 'Auto más economico',
         valor () {
-            
+
             var min = autos[0].precio;
             autos.forEach(auto => {
                 if (auto.precio < min) {
-                    min = auto.precio 
+                    min = auto.precio
                 }
 			});
 			return min
@@ -72,7 +72,7 @@ function Auto (marca, precio){
 }
 
 function actualizarEstadisticas () {
-    //array llamado x, mostrar el html que muestre est. con datos de autos. 
+    //array llamado x, mostrar el html que muestre est. con datos de autos.
 	let tabla = document.getElementById('estadisticas')
 	let datos = [];
 
@@ -105,7 +105,7 @@ function actualizarListaDeAutos() {
 
     if (autos.length == 0) {
         datos.push(`<div class="car">
-                <h3>No hay autos disponibles</h3>               
+                <h3>No hay autos disponibles</h3>
         </div>`)
     } else {
         autos.forEach(function (auto) {
