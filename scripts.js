@@ -23,9 +23,6 @@ function Auto (marca, precio){
 	this.precio = precio;
 }
 
-<<<<<<< HEAD
-formulario.addEventListener('submit', showResults)
-
 function actualizarEstadisticas () {
 //array llamado x, mostrar el html que muestre est. con datos de autos. 
 	let tabla = document.getElementById('estadisticas')
@@ -41,7 +38,7 @@ function actualizarEstadisticas () {
 	tabla.innerHTML = datos.join("")
 
 }
-=======
+
 function agregarAuto (marca,precio){
 	if(marca == undefined ||  marca==null && precio==undefined || precio==null){
 		alert("Complete ambos parametros")
@@ -50,4 +47,4 @@ function agregarAuto (marca,precio){
 		autos.push(auto);
 	}
 }
->>>>>>> 4b88fe30b23f658b8f1e6ffd520745509c48b39e
+
