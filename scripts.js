@@ -7,11 +7,11 @@ function limpiarFormulario() {
     formulario.marca.value = '';
 }
 
-function enviarFormulario(e){
+function enviarFormulario(e) {
     e.preventDefault();
     //Variables
-    var marca = document.getElementById("marca").value;
-    var precio = document.getElementById("precio").value;
+    var marca = formulario.marca.value;
+    var precio = formulario.precio.value;
     agregarAuto(marca, precio);
     actualizarListaDeAutos();
     actualizarEstadisticas();
@@ -25,7 +25,7 @@ function Auto (marca, precio){
 }
 
 function actualizarEstadisticas () {
-//array llamado x, mostrar el html que muestre est. con datos de autos. 
+    //array llamado x, mostrar el html que muestre est. con datos de autos. 
 	let tabla = document.getElementById('estadisticas')
 	let datos = [];
 
@@ -40,30 +40,38 @@ function actualizarEstadisticas () {
 
 }
 
-function agregarAuto (marca,precio){
-	if(marca == undefined ||  marca==null && precio==undefined || precio==null){
+function agregarAuto (marca, precio) {
+
+	if(!marca || !precio) {
 		alert("Complete ambos parametros")
-	}else{
+	} else {
 		var auto = new Auto(marca,precio);
 		autos.push(auto);
 	}
 }
 
-function actualizarListaAutos() {
+function actualizarListaDeAutos() {
 
 	let carList = document.getElementById('car-list')
 	let datos = []
 
-	autos.forEach(function (auto) {
-		datos.push(`<div class="car">
-				<h3>${auto.marca}</h3>
-				<p class="price">
-						<strong>Precio:</strong>
-						<span>$${auto.precio}</span>
-				</p>
-		</div>`)
-	})
+    if (autos.length == 0) {
+        datos.push(`<div class="car">
+                <h3>No hay autos disponibles</h3>               
+        </div>`)
+    } else {
+        autos.forEach(function (auto) {
+                datos.push(`<div class="car">
+                        <h3>${auto.marca}</h3>
+                        <p class="price">
+                                <strong>Precio:</strong>
+                                <span>$${auto.precio}</span>
+                        </p>
+                </div>`)
+            })
+    }
 
 	carList.innerHTML = datos.join("")
-
 }
+
+actualizarListaDeAutos();
