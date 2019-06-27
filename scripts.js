@@ -1,21 +1,27 @@
+var autos = [];
+
 let formulario = document.getElementById("form-carga");
 
 function limpiarFormulario() {
     // Completar
 }
 
-function showResults(e) {
+function enviarFormulario(e){
     e.preventDefault();
-	alert("Completame!");
+    //Variables
+    var marca = document.getElementById("marca").value;
+    var precio = document.getElementById("precio").value;
+    agregarAuto(marca, precio);
+    actualizarListaDeAutos();
+    actualizarEstadisticas();
 }
 
-formulario.addEventListener('submit', showResults);
+formulario.addEventListener('submit', enviarFormulario)
 
 function Auto (marca, precio){
-	this.marca=marca;
-	this.precio=precio;
+	this.marca = marca;
+	this.precio = precio;
 }
-var autos = [];
 
 function agregarAuto (marca,precio){
 	if(marca == undefined ||  marca==null && precio==undefined || precio==null){
