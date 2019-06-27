@@ -49,8 +49,6 @@ function agregarAuto (marca,precio){
 	}
 }
 
-<<<<<<< HEAD
-=======
 function actualizarListaAutos() {
 
 	let carList = document.getElementById('car-list')
@@ -69,4 +67,3 @@ function actualizarListaAutos() {
 	carList.innerHTML = datos.join("")
 
 }
->>>>>>> 4e9de320fbc9697e195f9abc9730a9950da82156
